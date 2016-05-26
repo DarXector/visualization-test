@@ -1,0 +1,35 @@
+body {
+    background: #fafafa;
+}
+
+.Chart{
+    position: relative;
+}
+
+.Chart svg{
+    pointer-events: none;
+}
+
+.axis path,
+.axis line
+{
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.dot {
+    stroke: #000;
+}
+
+.rule {
+    pointer-events: none;
+    position: absolute;
+    border-left: 1px solid #000;
+    text-align: left
+}
+
+
+
+
+
