@@ -10,12 +10,14 @@ var Chart = React.createClass({
     mixins:[Dragging],
 
     propTypes: {
-        width:  React.PropTypes.number,
-        height: React.PropTypes.number,
-        radius: React.PropTypes.number,
-        margin: React.PropTypes.object,
-        data:   React.PropTypes.array.isRequired,
-        domain: React.PropTypes.object.isRequired
+        width:      React.PropTypes.number,
+        height:     React.PropTypes.number,
+        radius:     React.PropTypes.number,
+        ruleValue:  React.PropTypes.number,
+        margin:     React.PropTypes.object,
+        data:       React.PropTypes.array.isRequired,
+        domain:     React.PropTypes.object.isRequired,
+        onChange:   React.PropTypes.func.isRequired
     },
 
     getDefaultProps: function(){
@@ -38,9 +40,7 @@ var Chart = React.createClass({
             width = this.props.width - margin.left - margin.right;
 
         if(x >= 0 && x <= width){
-            this.setState({
-                ruleValue: Math.round(x / width * 100) / 100
-            });
+            this.props.onChange(Math.round(x / width * 100) / 100);
         }
     },
 
@@ -77,11 +77,12 @@ var Chart = React.createClass({
                             width={width}
                             height={height}
                             radius={this.props.radius}
+                            xValue={this.props.ruleValue}
                             />
                         <XYAxis height={height} scales={scales()} />
                     </g>
                 </svg>
-                <Rule height={height} margin={margin} xPos={this.state.ruleValue * width} value={this.state.ruleValue} />
+                <Rule height={height} margin={margin} xPos={this.props.ruleValue * width} value={this.props.ruleValue} />
             </div>
         );
     }

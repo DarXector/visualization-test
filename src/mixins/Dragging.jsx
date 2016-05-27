@@ -16,6 +16,7 @@ var Dragging = {
         })
     },
 
+
     onMouseUp: function(){
         this.setState({
             dragging: false
@@ -27,6 +28,7 @@ var Dragging = {
             this.onDrag(e);
         }
         e.stopPropagation();
+        e.preventDefault();
     }
 };
 

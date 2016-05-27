@@ -13,11 +13,27 @@ app.all('/*', function(req, res, next) {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
+var getRandomSampleData = function(nodeNumber)
+{
+    var data = [];
+
+    for(var i = 0; i < nodeNumber; i++)
+    {
+        data.push({
+            id: Math.random()*10000,
+            x: Math.random(),
+            y: Math.random()
+        });
+    }
+
+    return data;
+};
+
 var data = [];
 // data
 
 app.get('/data', function(req, res) {
-    console.log("GET From SERVER");
+    data = getRandomSampleData(100);
     res.send(data);
 });
 

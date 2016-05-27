@@ -5,19 +5,25 @@ var ScatterPlot = React.createClass({
     propTypes: {
         data:   React.PropTypes.array.isRequired,
         scales: React.PropTypes.object.isRequired,
-        radius: React.PropTypes.number
+        radius: React.PropTypes.number,
+        xValue: React.PropTypes.number
     },
 
     getDefaultProps: function() {
         return {
-            radius: 4
+            radius: 6,
+            xValue: 0
         };
     },
 
     render: function(){
 
         var renderCircles = function(coords) {
-            return <circle  key={coords.x+coords.y}
+
+            var className = coords.x > this.props.xValue? "more" : "less";
+
+            return <circle className={className}
+                            key={coords.x+coords.y}
                             cx={this.props.scales.x(coords.x)}
                             cy={this.props.scales.y(coords.y)}
                             r={this.props.radius}/>;
