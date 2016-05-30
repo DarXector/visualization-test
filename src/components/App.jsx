@@ -6,7 +6,9 @@ var countMoreOrLess = require('../util/countMoreOrLess');
 var ChartActions = require('../reflux/Actions.jsx');
 var DataStore = require('../reflux/DataStore.jsx');
 
-//https://www.npmjs.com/package/rc-slider
+/**
+ * https://www.npmjs.com/package/rc-slider
+ */
 var Slider = require('rc-slider');
 
 /**
