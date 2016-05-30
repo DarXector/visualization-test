@@ -2,7 +2,13 @@ var Fetch = require('whatwg-fetch');
 
 var baseUrl = 'http://localhost:6060';
 
-var service = {
+/**
+ * Basic logic for getting data from a server and posting data to a server using Fetch
+ * https://www.npmjs.com/package/whatwg-fetch
+ * @type {{get: Function, post: Function}}
+ * @namespace Service
+ */
+var Service = {
     get: function(url){
         return fetch(baseUrl + url)
             .then(function(response){
@@ -24,4 +30,4 @@ var service = {
     }
 };
 
-module.exports = service;
+module.exports = Service;

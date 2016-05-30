@@ -1,6 +1,11 @@
 var React = require('react');
 var d3 = require('d3');
 
+/**
+ * Vertical Rule line
+ * @type {*|Function}
+ * @namespace Rule
+ */
 var Rule = React.createClass({
 
     propTypes: {

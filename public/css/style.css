@@ -53,5 +53,9 @@ circle.more{
     float: left;
 }
 
+.row .btn{
+    float: none;
+    margin: 0 auto;
+}
 
 

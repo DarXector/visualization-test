@@ -1,3 +1,7 @@
+/**
+ * Intended as a reusable dragging logic to be added to components using mixins
+ * @type {{componentDidMount: Function, getInitialState: Function, onMouseDown: Function, onMouseUp: Function, onMouseMove: Function}}
+ */
 var Dragging = {
 
     componentDidMount: function () {

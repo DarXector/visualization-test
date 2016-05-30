@@ -1,5 +1,10 @@
 var React = require('react');
 
+/**
+ * Scatter plot graph representing data values with round nodes.
+ * @type {*|Function}
+ * @namespace ScatterPlot
+ */
 var ScatterPlot = React.createClass({
 
     propTypes: {
@@ -18,6 +23,7 @@ var ScatterPlot = React.createClass({
 
     render: function(){
 
+        // Draw circles depending on the value of the node (larger, same or smaller than the rule value)
         var renderCircles = function(coords) {
 
             var className = coords.x > this.props.xValue? "more" : "less";

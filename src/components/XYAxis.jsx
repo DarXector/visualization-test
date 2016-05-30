@@ -1,6 +1,12 @@
 var React = require('react');
 var d3 = require('d3');
 
+/**
+ * Graphical representation of a single Axis
+ * @type {*|Function}
+ * @namespace Axis
+ * @memberof XYAxis
+ */
 var Axis = React.createClass({
 
     propTypes: {
@@ -38,6 +44,12 @@ var Axis = React.createClass({
     }
 });
 
+/**
+ * Graphical representation of X and Y axis.
+ * Contains two instances of Axis component, one for vertical one for horizontal
+ * @type {*|Function}
+ * @namespace XYAxis
+ */
 var XYAxis = React.createClass({
 
     propTypes: {

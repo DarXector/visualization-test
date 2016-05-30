@@ -1,5 +1,12 @@
 var React = require('react');
 
+/**
+ * View component for the Chart nodes counting.
+ * Contains two instances of the Counter component, one for nodes with bigger and same values,
+ * one for smaller values than the rule value
+ * @type {*|Function}
+ * @namespace Counters
+ */
 var Counters = React.createClass({
 
     propTypes: {
@@ -29,7 +36,12 @@ var Counters = React.createClass({
 
 });
 
-
+/**
+ * Single counter component.
+ * @type {*|Function}
+ * @namespace Counter
+ * @memberof Counters
+ */
 var Counter = React.createClass({
 
     propTypes: {
